@@ -1,0 +1,13 @@
+name = "secret-store-repro"
+main = "build/worker/shim.mjs"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "cargo install -q worker-build && worker-build --release"
+
+# Secrets Store binding
+# Replace store_id and secret_name with your own values
+[[secrets_store_secrets]]
+binding = "MY_SECRET"
+secret_name = "my_secret_name"
+store_id = "9ff53e3094b54ddeb4de44cfa3471119"
